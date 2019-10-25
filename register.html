@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onetech Official Store</title>
+    <link rel="stylesheet" href="assets/css/styless.css">
+  </head>
+  <body align="left">
+    <div class="header">
+      <a href="index.html"><img class="logo" src="assets/img/anrhlogo.png"></a>
+      <form class="Signup" action="register.html">
+        <input class="Signup" type="submit" name="Register" value="Sign Up">
+      </form>
+      <form class="Signin" action="login.html">
+        <input class="Signin" type="Submit" name="Login" value="Sign in">
+      </form>
+      <form class="cari" action="index.html" method="post">
+        <input type="text" placeholder="Cari">
+      </form>
+    </div>
+    <div class="navigasi">
+     
+    </div>
+    <form class="register" align="center">
+      <h2>ANRH STORE</h2>
+      <h3>Create an Account</h3>
+      <input type="email" id="usrname" placeholder="Email address" required><br><br>
+      <input type="text" placeholder="First Name"><br><br>
+      <input type="text" placeholder="Last Name"><br><br>
+      <input type="password" id="psw" placeholder="Password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password harus menggunakan huruf kapital, huruf kecil, angka, and lebih dari 8 karakter" required><br><br>
+      <input type="password" id="psw" placeholder="Verifikasi Password" required><br><br>
+      <input align="Right" type="checkbox" onclick="tampilkanpsw()"><i>Tampilkan Password</i><br><br>
+      <form class="daftarin">
+        <input class= "daftarin" type="submit" name="Login" value="C R E A T E"><br><br>
+        <a href="login.html">Back to Login</a>
+      </form>
+    </form>
+
+    <div id="message">
+      <h3 class="message">Password Harus Menggunakan Aturan Berikut:</h3>
+      <p id="letter" class="invalid"><b>Menggunakan Huruf Kecil</b></p>
+      <p id="capital" class="invalid"><b>Menggunakan Huruf Kapital</b></p>
+      <p id="number" class="invalid"><b>Menggunakan Angka</b></p>
+      <p id="length" class="invalid"><b>Minimal 8 Karakter</b></p>
+    </div>
+
+    <script>
+    var myInput = document.getElementById("psw");
+    var letter = document.getElementById("letter");
+    var capital = document.getElementById("capital");
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
+
+    myInput.onfocus = function() {
+      document.getElementById("message").style.display = "block";
+    }
+
+    myInput.onblur = function() {
+      document.getElementById("message").style.display = "none";
+    }
+
+    myInput.onkeyup = function() {
+      var lowerCaseLetters = /[a-z]/g;
+      if(myInput.value.match(lowerCaseLetters)) {
+        letter.classList.remove("invalid");
+        letter.classList.add("valid");
+      } else {
+        letter.classList.remove("valid");
+        letter.classList.add("invalid");
+      }
+
+      var upperCaseLetters = /[A-Z]/g;
+      if(myInput.value.match(upperCaseLetters)) {
+        capital.classList.remove("invalid");
+        capital.classList.add("valid");
+      } else {
+        capital.classList.remove("valid");
+        capital.classList.add("invalid");
+      }
+
+      var numbers = /[0-9]/g;
+      if(myInput.value.match(numbers)) {
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+      } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+      }
+
+      if(myInput.value.length >= 8) {
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+      } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+      }
+    }
+    function tampilkanpsw() {
+      var x = document.getElementById("psw");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+    </script>
+
+  </body>
+</html>

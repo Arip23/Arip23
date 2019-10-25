@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anrh Clothing</title>
+    <link rel="stylesheet" href="assets/css/styless.css">
+  </head>
+  <body>
+
+    <div class="header">
+      <img class="logo" src="assets/img/anrhlogo.png">
+
+      
+       
+    </div>
+    <div class="navigasi">
+     
+        
+
+    </div>
+
+    <div class="contentindex">
+      <form class="store">
+         <h1>Store Baju Termurah,Terbagus</h1>
+      </form>
+      <form class="Anrh">
+        <h2>BRAND ANRH</h2>
+      </form>
+      <form class="selengkapnya" action="produk.html" method="post">
+        <input class="selengkapnya" type="submit"  name="" value="SKUY BELI">
+      </form>
+    </div>
+
+
+
+    <style>.mainContent {
+    width: 35%;
+    margin: 2.5em auto;
+    background:#102128;
+  margin-top: 221px;;
+    padding: 2.5em;
+    color: white;
+}
+.contactFrm h4 {
+    font-size: 1em;
+    color: white;
+    margin-bottom: 0.5em;
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+.contactFrm input[type="text"], .contactFrm input[type="email"] {
+    width: 70%;
+    color: black;
+    outline: none;
+    font-size: 0.9em;
+    padding: .7em 1em;
+    border: 1px solid #000;
+    -webkit-appearance: none;
+    display: black;
+    margin-bottom: 1.2em;
+}
+.contactFrm textarea {
+    resize: none;
+    color:black;
+    width: 93.5%;
+    font-size: 0.9em;
+    outline: none;
+    padding: .6em 1em;
+    border: 1px solid #000;
+    min-height: 10em;
+    -webkit-appearance: none;
+}
+.contactFrm input[type="submit"] {
+    outline: none;
+    color: black;
+    padding: 0.5em 0;
+    font-size: 1em;
+    margin: 1em 0 0 0;
+    -webkit-appearance: none;
+    background: #006faa;
+    transition: 0.5s all;
+    border: 2px solid #006faa;
+    -webkit-transition: 0.5s all;
+    transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    width: 47%;
+    cursor: pointer;
+}
+.contactFrm input[type="submit"]:hover {
+    background: none;
+    color: black;
+}
+
+p.statusMsg{font-size:18px;}
+p.succdiv{color: #008000;}
+p.errordiv{color:#E80000;}
+</style>
+  <div class="mainContent"><center>
+    <h2>Kekurangan Kami </h2> 
+    <div class="contactFrm">
+        <?php if(!empty($statusMsg)){ ?>
+            <p class="statusMsg <?php echo !empty($msgClass)?$msgClass:''; ?>"><?php echo $statusMsg; ?></p>
+        <?php } ?>
+        <form action="" method="post">
+            <h4>Name</h4>
+            <input type="text" name="name" placeholder="Nama Anda" required="">
+            <h4>Email </h4>
+            <input type="email" name="email" placeholder="email@example.com" required="">
+            <h4>Subject</h4>
+            <input type="text" name="subject" placeholder="Tulis subject" required="">
+            <h4>Message</h4>
+            <textarea name="message" placeholder="Tulis pesan Anda disini" required=""> </textarea>
+            <input type="submit" name="submit" value="Submit">
+            <div class="clear"> </div>
+        </form></center>
+    </div>
+    
+</div>
+
+  </body>
+</html>
